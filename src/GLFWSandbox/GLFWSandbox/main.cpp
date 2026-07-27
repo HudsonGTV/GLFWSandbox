@@ -1,9 +1,15 @@
 #include <iostream>
-#include <GLFW/glfw3.h>
+#include <glad/glad.h>
+
+#include "window.hpp"
+#include "config.hpp"
 
 int main() {
 
-	std::cout << "hi\n";
+	Window window{WINDOW_WIDTH, WINDOW_HEIGHT, "OpenGL Window"};
+	glfwMakeContextCurrent(window.get());
+
+	while(1);
 
 	return 0;
 
