@@ -152,6 +152,8 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="..\..\..\..\..\ext-lib\glad\src\glad.c" />
+    <ClCompile Include="application.cpp" />
+    <ClCompile Include="application.hpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="window.cpp" />
   </ItemGroup>

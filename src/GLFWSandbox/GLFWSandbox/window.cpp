@@ -1,9 +1,6 @@
-#include <iostream>
-
 #include "window.hpp"
 
 Window::Window(int width, int height, const char* title) {
-	glfwInit();
 
 	// Configure GLFW
 	// Note: See https://www.glfw.org/docs/latest/window.html#window_hints
@@ -27,7 +24,18 @@ Window::Window(Window&& other) noexcept : window(other.window) {
 	other.window = nullptr;
 }
 
-GLFWwindow* Window::get() {
+Window& Window::operator=(Window&& other) noexcept {
+	if(this != &other) {
+		if(this->window) {
+			glfwDestroyWindow(this->window);
+		}
+		this->window = other.window;
+		other.window = nullptr;
+	}
+	return *this;
+}
+
+GLFWwindow* Window::get() const {
 	return this->window;
 }
 

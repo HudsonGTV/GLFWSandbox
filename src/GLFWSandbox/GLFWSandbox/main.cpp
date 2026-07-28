@@ -1,19 +1,11 @@
 #include <iostream>
-#include <glad/glad.h>
 
-#include "window.hpp"
-#include "config.hpp"
+#include "application.hpp"
 
 int main() {
 
-	// Init GLAD (handles conversions between different GPU manufacturers)
-	if(!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress))
-		throw std::runtime_error("Failed to initialize GLAD");
-
-	Window window{WINDOW_WIDTH, WINDOW_HEIGHT, "OpenGL Window"};
-	glfwMakeContextCurrent(window.get());
-
-	while(1);
+	Application app{};
+	app.loop();
 
 	return 0;
 
