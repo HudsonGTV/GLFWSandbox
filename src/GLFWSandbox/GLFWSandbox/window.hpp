@@ -11,24 +11,25 @@
 
 class Window {
 
+
 private:
-	GLFWwindow* window {nullptr};
+	GLFWwindow *window{nullptr};
 
 public:
 	explicit Window(int width, int height, const char *title);
 	~Window();
 
 	// disable copy constructor
-	Window(const Window& other) = delete;
+	Window(const Window &other) = delete;
 	// disable letting another pointer have this
-	Window& operator=(const Window& other) = delete;
+	Window &operator=(const Window &other) = delete;
 	// allow moving to new var
-	Window(Window&& other) noexcept;
+	Window(Window &&other) noexcept;
 	// allow moving to existing var (where other is already initialized)
-	Window& operator=(Window&& other) noexcept;
+	Window &operator=(Window &&other) noexcept;
 
 
-	GLFWwindow* get() const;
+	GLFWwindow *get() const;
 
 };
 

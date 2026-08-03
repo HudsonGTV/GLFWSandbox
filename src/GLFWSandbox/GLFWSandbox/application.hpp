@@ -1,11 +1,17 @@
+/**
+* Main application object
+**/
+
 #ifndef APPLICATION_HPP
 #define APPLICATION_HPP
 
 #include <iostream>
 #include <memory>
 
-#include "window.hpp"
 #include "config.hpp"
+#include "window.hpp"
+#include "input.hpp"
+#include "shader.hpp"
 
 class Application {
 
